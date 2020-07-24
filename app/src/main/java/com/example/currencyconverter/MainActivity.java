@@ -42,7 +42,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Double tot ;
                 Double amount = Double.parseDouble(ed1.getText().toString());
-                if (spFrom.getSelectedItem().toString() == "USD" && spTo.getSelectedItem().toString() == "India Rupee") {
+                
+                  if (ed1.length()==0){
+                    ed1.setError("Please Input First!");
+                }
+              else if (spFrom.getSelectedItem().toString() == "USD" && spTo.getSelectedItem().toString() == "India Rupee") {
                     tot = amount * 70.0;
                     Toast.makeText(getApplicationContext(),tot.toString(),Toast.LENGTH_LONG).show();
                 }
